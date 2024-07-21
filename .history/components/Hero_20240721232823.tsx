@@ -60,12 +60,12 @@ const Hero = () => {
        
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-          À la recherche  d&apos;alternance à partir de Septembre 2024.
+          À la recherche  d&apos;alternance à partir \n de Septembre 2024.
           </p>
 
           <a href="#about">
             <MagicButton
-              title="Mes projects"
+              title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
             />

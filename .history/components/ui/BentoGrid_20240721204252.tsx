@@ -2,14 +2,14 @@
 
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-
+// import { Globe } from "./Globe";
 import { GlobeDemo } from "./GridGlobe";
 import Lottie from 'react-lottie-player'
-import { useState } from "react";
+import {  createContext, useState, useContext } from "react";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-
+// import Lottie from "react-lottie";
 
 export const BentoGrid = ({
   className,
@@ -51,8 +51,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["HTML", "CSS","React.js"];
-  const rightLists = ["Node", "Express", "SQL"];
+  const leftLists = ["ReactJS", "Express", "Typescript"];
+  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
 

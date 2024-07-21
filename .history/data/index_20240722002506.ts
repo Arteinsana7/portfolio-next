@@ -8,7 +8,7 @@ export const navItems = [
   export const gridItems = [
     {
       id: 1,
-      title: "je crois à la synergie d'une équipe comme la clé du succès",
+      title: "je crois fermement que la synergie entre les membres d'une équipe est la clé du succès",
       description: "",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "Curieuse et flexible",
+      title: "Curieuse et flexible. je m'adapte aux nouveaux envirements de travail.",
       description: "je m'adapte aux nouveaux envirements de travail.",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",

@@ -1,8 +1,7 @@
-"use client";
 import React from "react";
-
 import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
+
+import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 
 const Approach = () => {
   return (
@@ -14,7 +13,7 @@ const Approach = () => {
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Plannification & Strategie"
+          title="Planning & Strategy"
           icon={<AceternityIcon order="Phase 1" />}
           des="We'll collaborate to map out your website's goals, target audience, 
           and key functionalities. We'll discuss things like site structure, 

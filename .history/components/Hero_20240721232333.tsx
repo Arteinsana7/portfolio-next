@@ -52,7 +52,7 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Développeuse Full-stack en cours de formation"
+            words="Développeuse Full-stack en cours de &amp;formation"
             
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
             
@@ -65,7 +65,7 @@ const Hero = () => {
 
           <a href="#about">
             <MagicButton
-              title="Mes projects"
+              title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
             />

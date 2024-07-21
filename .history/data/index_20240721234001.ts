@@ -8,7 +8,7 @@ export const navItems = [
   export const gridItems = [
     {
       id: 1,
-      title: "je crois à la synergie d'une équipe comme la clé du succès",
+      title: "Créative, curieuse et dotée d'un esprit critique.",
       description: "",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
@@ -18,8 +18,8 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "Curieuse et flexible",
-      description: "je m'adapte aux nouveaux envirements de travail.",
+      title: "I'm very flexible with time zone communications",
+      description: "",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-start",
@@ -28,8 +28,8 @@ export const navItems = [
     },
     {
       id: 3,
-      title: "Mes Acquis",
-      description: "Évolution constante de mes aquis",
+      title: "My tech stack",
+      description: "I constantly try to improve",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-center",
