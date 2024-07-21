@@ -66,7 +66,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "e.arteinsana@gmail.com";
+    const text = "hsu@jsmastery.pro";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -179,12 +179,7 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie
-                  loop={copied}
-                  animationData={animationData}
-                  play={copied}
-                  style={{ width: 400, height: 200 }}
-                />
+                <Lottie options={defaultOptions} height={200} width={400} />
               </div>
 
               <MagicButton
