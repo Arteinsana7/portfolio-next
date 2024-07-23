@@ -36,7 +36,7 @@ export const navItems = [
       imgClassName: "",
       titleClassName: "justify-center",
       img: "",
-      spareImg: "Background.png",
+      spareImg: "",
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ export const navItems = [
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
-      img: "/illus.png",
+      img: "/b5.svg",
       spareImg: "/grid.svg",
     },
     {
@@ -144,7 +144,7 @@ export const navItems = [
       id: 3,
       title: "Assistante à la réalisation de films",
       desc: "Logistique, organisation et planning d'un tournage. Régie, management et gestion d'imprévus",
-      className: "md:col-span-2", 
+      className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp3.svg",
     },
     {

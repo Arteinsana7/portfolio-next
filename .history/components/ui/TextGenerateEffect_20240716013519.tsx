@@ -12,7 +12,6 @@ export const TextGenerateEffect = ({
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
-
   useEffect(() => {
     animate(
       "span",
@@ -24,21 +23,18 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2),
       }
     );
-  }, [animate]);
+  }, );
 
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
-          // Cette condition applique les couleur que je veux aux mots choisis.
-          const colorClass = (word === "Développeuse" || word === "Full-stack")
-            ? "text-purple"
-            : "dark:text-white text-black";
           return (
             <motion.span
               key={word + idx}
-              className={`${colorClass} opacity-0`}
-            >
+              className={` ${idx > 3 ? "text-purple" : "dark:text-white text-black"
+              } opacity-0`}
+          >
               {word}{" "}
             </motion.span>
           );
@@ -50,7 +46,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="my-4">
-        <div className="dark:text-white text-black leading-snug tracking-wide">
+        <div className=" dark:text-white text-black leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

@@ -3,15 +3,16 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export const TextGenerateEffect = ({
-  words,
-  className,
-}: {
-  words: string;
+interface TextGenerateEffectProps {
+  phrases: { text: string; colorClass?: string }[];
   className?: string;
-}) => {
+}
+
+export const TextGenerateEffect = ({
+  phrases,
+  className,
+}: TextGenerateEffectProps) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
 
   useEffect(() => {
     animate(
@@ -26,23 +27,21 @@ export const TextGenerateEffect = ({
     );
   }, [animate]);
 
-  const renderWords = () => {
+  const renderPhrases = () => {
     return (
       <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          // Cette condition applique les couleur que je veux aux mots choisis.
-          const colorClass = (word === "Développeuse" || word === "Full-stack")
-            ? "text-purple"
-            : "dark:text-white text-black";
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${colorClass} opacity-0`}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
+        {phrases.map((phrase, idx) => (
+          <div key={idx} className="my-2">
+            {phrase.text.split(" ").map((word, wordIdx) => (
+              <motion.span
+                key={word + wordIdx}
+                className={`${phrase.colorClass || "dark:text-white text-black"} opacity-0`}
+              >
+                {word}{" "}
+              </motion.span>
+            ))}
+          </div>
+        ))}
       </motion.div>
     );
   };
@@ -51,7 +50,7 @@ export const TextGenerateEffect = ({
     <div className={cn("font-bold", className)}>
       <div className="my-4">
         <div className="dark:text-white text-black leading-snug tracking-wide">
-          {renderWords()}
+          {renderPhrases()}
         </div>
       </div>
     </div>

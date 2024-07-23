@@ -36,7 +36,7 @@ export const navItems = [
       imgClassName: "",
       titleClassName: "justify-center",
       img: "",
-      spareImg: "Background.png",
+      spareImg: "",
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ export const navItems = [
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
-      img: "/illus.png",
+      img: "/b5.svg",
       spareImg: "/grid.svg",
     },
     {
@@ -136,21 +136,21 @@ export const navItems = [
     {
       id: 2,
       title: "Responsable de ventes et marketing digitale",
-      desc: "Analyse de données de vente, stratégies & campagnes en ligne",
+      desc: "Analyse de données de vente, marketing digitale",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
       title: "Assistante à la réalisation de films",
-      desc: "Logistique, organisation et planning d'un tournage. Régie, management et gestion d'imprévus",
-      className: "md:col-span-2", 
+      desc: "Logistique, organisation et planning d'un tournage. Régie, management et gestion des imprévus",
+      className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/exp3.svg",
     },
     {
       id: 4,
       title: "Graphiste Freelance",
-      desc: "Conception - Maquettes - Direction Artistique. Études du marché, tendances & positionnement",
+      desc: "Developed and maintained user-facing features using modern frontend technologies.",
       className: "md:col-span-2",
       thumbnail: "/exp4.svg",
     },
