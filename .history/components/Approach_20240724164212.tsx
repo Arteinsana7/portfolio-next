@@ -6,9 +6,9 @@ import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
 
 const Approach = () => {
   return (
-    <section className="w-full py-20" id="methodes">
+    <section className="w-full py-20" id="approche">
       <h1 className="heading">
-     Méthodologies<span className="text-purple"> de travail.</span>
+      Approche<span className="text-purple"> de travail.</span>
       </h1>
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
