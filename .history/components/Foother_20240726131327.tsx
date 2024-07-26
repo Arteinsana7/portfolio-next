@@ -45,7 +45,7 @@ const Footer = () => {
             >
               <Image
                 src={info.img}
-                alt="icons" // Use a more descriptive alt attribute
+                alt={info.name} // Use a more descriptive alt attribute
                 width={20} // Use actual dimensions or adjust as needed
                 height={20}
                 className="object-cover"

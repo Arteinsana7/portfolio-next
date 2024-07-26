@@ -21,8 +21,8 @@ const Experience = () => {
               <Image
                 src={card.thumbnail}
                 alt={card.title}
-                width={128} 
-                height={128} 
+                width={128} // Replace with appropriate width
+                height={128} // Replace with appropriate height
                 className="lg:w-32 md:w-20 w-16 lg:h-32 md:h-20 h-16 object-cover rounded-lg"
               />
               <div className="lg:ms-5">

@@ -17,7 +17,7 @@ export const navItems = [
       imgClassName: "w-full h-full",
       titleClassName: "justify-end",
       img: "/computer-1.svg",
-      spareImg: "",
+      spareImg: "/grid.svg",
     },
     {
       id: 2,
@@ -93,7 +93,7 @@ export const navItems = [
       title: "OnMeuble ",
       des: "Site e-commerce : Création d'une API REST.",
       img: "/OnMeuble.png",
-      iconLists: ["/re.svg", "/expressjs-icon_w.png","/node-js.svg","/supabase-logo-icon.svg"],
+      iconLists: ["/re.svg", "/expressjs-icon_w.png","/node-js.svg","/supabase.svg"],
       link: "https://github.com/adatechschool/onmeuble",
     },
     
@@ -109,7 +109,7 @@ export const navItems = [
       id: 5,
       title: "The Daily Space.",
       des: "Appel API de la NASA. Une image de l'espace par jour.",
-      img: "/daily.svg",
+      img: "/daily.png",
       iconLists: ["/file-type-js-official.svg","/html5.svg","/file-type-css.svg"],
       link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
     },

@@ -23,7 +23,7 @@ const Footer = () => {
           Discutons de la manière dont nous pouvons <span className="text-purple">Collaborer.</span>
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center flex items-center justify-center">
-          D&apos;abord, un café pour bien commencer, ensuite, prenons contact
+          D&apos;abord, un café pour bien commencer.
           <IoFlash className="ml-2" />
         </p>
         <a href="mailto:e.arteinsana@gmail.com">

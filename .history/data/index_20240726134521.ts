@@ -109,7 +109,7 @@ export const navItems = [
       id: 5,
       title: "The Daily Space.",
       des: "Appel API de la NASA. Une image de l'espace par jour.",
-      img: "/daily.svg",
+      img: "/Daily_1.svg",
       iconLists: ["/file-type-js-official.svg","/html5.svg","/file-type-css.svg"],
       link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
     },

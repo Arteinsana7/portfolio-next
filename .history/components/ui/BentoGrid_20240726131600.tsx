@@ -9,7 +9,7 @@ import { useState } from "react";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-// import Image from 'next/image';
+
 
 export const BentoGrid = ({
   className,
@@ -59,7 +59,7 @@ export const BentoGridItem = ({
     autoplay: copied,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "XMidYMid slice",
+      preserveAspectRatio: "xMidxMid slice",
     },
   };
 
