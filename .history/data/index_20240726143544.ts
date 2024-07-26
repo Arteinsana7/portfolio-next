@@ -131,7 +131,7 @@ export const navItems = [
       title: "Chargée de Communication Digitale & Événementielle.",
       desc: "Gestion de projet pour la mise en avant des produits à travers l'événementiel, les réseaux sociaux et les newsletters.",
       className: "md:col-span-2",
-      thumbnail: "/icons_comm_violet.png",
+      thumbnail: "/icons_comm_violet_2.png",
     },
     {
       id: 2,
