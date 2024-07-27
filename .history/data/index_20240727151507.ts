@@ -76,7 +76,7 @@ export const navItems = [
       id: 1,
       title: "YouTube Clone",
       des: "Plateforme de streaming. Appel API avec RapidAPI.",
-      img: "/YouTubeClone.png",
+      img: "/P3_YOUTUBE.png",
       iconLists: ["/re.svg","rapidapi-icon.svg", "material-ui-1.svg" ],
       link: "https://youtubeclone55.netlify.app",
     },
