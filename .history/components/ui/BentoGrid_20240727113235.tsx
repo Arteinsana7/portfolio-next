@@ -104,6 +104,9 @@ export const BentoGridItem = ({
               className="object-cover object-center w-full h-full"
             />
           )}
+
+          
+          
         </div>
         {id === 6 && (
           // add background animation , remove the p tag

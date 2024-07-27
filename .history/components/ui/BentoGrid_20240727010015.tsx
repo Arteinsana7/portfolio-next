@@ -71,6 +71,27 @@ export const BentoGridItem = ({
     setCopied(true);
   };
 
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
+  const getImageSrc = () => {
+    if (isMobile) {
+      return img ? img.replace('large', 'small') : null; // Change the image URL as needed
+    } else if (isTabletOrMobile) {
+      return img ? img.replace('large', 'medium') : null; // Change the image URL as needed
+    }
+    return img;
+  };
+
+  const getSpareImageSrc = () => {
+    if (isMobile) {
+      return spareImg ? spareImg.replace('large', 'small') : null; // Change the image URL as needed
+    } else if (isTabletOrMobile) {
+      return spareImg ? spareImg.replace('large', 'medium') : null; // Change the image URL as needed
+    }
+    return spareImg;
+  };
+
   return (
     <div
       className={cn(
@@ -84,29 +105,28 @@ export const BentoGridItem = ({
       }}
     >
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
+        <div className="w-full h-full absolute flex items-center justify-center">
           {img && (
             <img
-              src={img}
+              src={getImageSrc()}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              className={cn(imgClassName, "object-cover object-center max-w-full max-h-full m-auto")}
             />
           )}
         </div>
         <div
           className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
+            } flex items-center justify-center`}
         >
           {spareImg && (
             <img
-              src={spareImg}
+              src={getSpareImageSrc()}
               alt={spareImg}
-              className="object-cover object-center w-full h-full"
+              className="object-cover object-center max-w-full max-h-full m-auto"
             />
           )}
         </div>
         {id === 6 && (
-          // add background animation , remove the p tag
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
           </BackgroundGradientAnimation>
@@ -118,7 +138,6 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          
           <div
             className={`font-sans text-lg lg:text-3xl whitespace-pre-wrap max-w-96 font-medium z-10`}
           >
@@ -163,12 +182,10 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-3 relative space-y-2">
-              
               <div
                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
                   }`}
               >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
                 <Lottie
                   loop={copied}
                   animationData={animationData}

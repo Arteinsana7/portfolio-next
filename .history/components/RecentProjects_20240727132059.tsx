@@ -11,7 +11,7 @@ const RecentProjects = () => {
         Mes{" "}
         <span className="text-purple">projets</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-10 mt-10">
         {projects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
@@ -21,8 +21,7 @@ const RecentProjects = () => {
               title={item.title}  // Use item.title from the projects array
               href={item.link}    // Use item.link from the projects array
             >
-              {/* This is the div that makes the images on the cards, on  */}
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[30vh] gap-5 lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[35vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}

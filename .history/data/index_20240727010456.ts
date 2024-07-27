@@ -84,7 +84,7 @@ export const navItems = [
       id: 2,
       title: "Esquisse",
       des: "Application mobile pour Android: Modèle Vue Contrôleur.",
-      img: "/Urbanspots-App_2.png",
+      img: "/Urbanspots-App_3.png",
       iconLists: ["/kotlin.svg", "/spring.svg", "/postgresql.svg"],
       link: "https://github.com/adatechschool/projet-collectif-mobile-les-zencas",
     },

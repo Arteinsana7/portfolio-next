@@ -4,6 +4,8 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from './ui/3d-pin'
+
+
 const RecentProjects = () => {
   return (
     <div className="py-20 mt-5" id="projects">
@@ -18,21 +20,19 @@ const RecentProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title={item.title}  // Use item.title from the projects array
-              href={item.link}    // Use item.link from the projects array
+              title={item.title}
+              href={item.link}
             >
-              {/* This is the div that makes the images on the cards, on  */}
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[30vh] gap-5 lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162D]"
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <img src="/bg.png" alt="bgimg" className="w-full h-full object-cover" />
                 </div>
                 <img
                   src={item.img}
                   alt="cover"
-                  className="z-10 absolute bottom-0"
+                  className="absolute bottom-0 z-10 transform translate-x-1/2 -translate-x-1/2"
                 />
               </div>
 
@@ -67,7 +67,7 @@ const RecentProjects = () => {
 
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                 Site / GitHub
+                    Site / GitHub
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>

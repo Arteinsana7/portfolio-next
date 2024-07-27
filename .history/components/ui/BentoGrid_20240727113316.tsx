@@ -89,7 +89,7 @@ export const BentoGridItem = ({
             <img
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              className={cn(imgClassName, "object-cover object-center w-full h-full ")}
             />
           )}
         </div>
@@ -104,6 +104,9 @@ export const BentoGridItem = ({
               className="object-cover object-center w-full h-full"
             />
           )}
+
+          
+          
         </div>
         {id === 6 && (
           // add background animation , remove the p tag

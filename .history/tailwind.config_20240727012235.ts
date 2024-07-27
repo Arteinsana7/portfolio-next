@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
-
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
@@ -160,6 +159,12 @@ const config: Config = {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
+      screens: {
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1400px',
+      },
     },
   },
   plugins: [
@@ -188,7 +193,7 @@ const config: Config = {
       );
     },
   ],
-} satisfies Config;
+};
 
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
@@ -201,21 +206,4 @@ function addVariablesForColors({ addBase, theme }: any) {
   });
 }
 
-module.exports = {
-  ...config,
-  theme: {
-    ...config.theme,
-    extend: {
-      ...config.theme.extend,
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1536px',
-      },
-      // Additional customizations...
-    },
-  },
-  plugins: config.plugins,
-};
+export default config;

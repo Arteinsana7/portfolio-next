@@ -4,6 +4,8 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from './ui/3d-pin'
+
+
 const RecentProjects = () => {
   return (
     <div className="py-20 mt-5" id="projects">
@@ -14,15 +16,14 @@ const RecentProjects = () => {
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-50 w-[80vw]"
             key={item.id}
           >
             <PinContainer
               title={item.title}  // Use item.title from the projects array
               href={item.link}    // Use item.link from the projects array
             >
-              {/* This is the div that makes the images on the cards, on  */}
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[30vh] gap-5 lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}

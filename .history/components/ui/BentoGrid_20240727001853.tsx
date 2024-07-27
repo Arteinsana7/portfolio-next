@@ -71,6 +71,27 @@ export const BentoGridItem = ({
     setCopied(true);
   };
 
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
+  const getImageSrc = () => {
+    if (isMobile) {
+      return img ? img.replace('large', 'small') : null; // Change the image URL as needed
+    } else if (isTabletOrMobile) {
+      return img ? img.replace('large', 'medium') : null; // Change the image URL as needed
+    }
+    return img;
+  };
+
+  const getSpareImageSrc = () => {
+    if (isMobile) {
+      return spareImg ? spareImg.replace('large', 'small') : null; // Change the image URL as needed
+    } else if (isTabletOrMobile) {
+      return spareImg ? spareImg.replace('large', 'medium') : null; // Change the image URL as needed
+    }
+    return spareImg;
+  };
+
   return (
     <div
       className={cn(
@@ -87,7 +108,7 @@ export const BentoGridItem = ({
         <div className="w-full h-full absolute">
           {img && (
             <img
-              src={img}
+              src={getImageSrc()}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
             />
@@ -99,7 +120,7 @@ export const BentoGridItem = ({
         >
           {spareImg && (
             <img
-              src={spareImg}
+              src={getSpareImageSrc()}
               alt={spareImg}
               className="object-cover object-center w-full h-full"
             />
@@ -118,7 +139,6 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          
           <div
             className={`font-sans text-lg lg:text-3xl whitespace-pre-wrap max-w-96 font-medium z-10`}
           >
@@ -140,7 +160,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-80 rounded-lg text-center bg-[#10132E]"
+                  lg:opacity-80 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -153,7 +173,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-80 rounded-lg text-center bg-[#10132E]"
+                  lg:opacity-80 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -163,12 +183,10 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-3 relative space-y-2">
-              
               <div
                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
                   }`}
               >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
                 <Lottie
                   loop={copied}
                   animationData={animationData}
