@@ -13,7 +13,7 @@ const Approach = () => {
       </h1>
       
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
-       
+        {/* add des props */}
         <Card
           title="Communication & Organisation"
           icon={<AceternityIcon order="Phase 1" />}
@@ -21,7 +21,7 @@ const Approach = () => {
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
-            
+            // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
             containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
           />
         </Card>
