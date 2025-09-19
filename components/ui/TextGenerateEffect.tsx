@@ -31,7 +31,7 @@ export const TextGenerateEffect = ({
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
           // Cette condition applique les couleur que je veux aux mots choisis.
-          const colorClass = (word === "Développeuse" || word === "Full-stack")
+          const colorClass = (word === "Développeuse" || word === "Créative")
             ? "text-purple"
             : "dark:text-white text-black";
           return (

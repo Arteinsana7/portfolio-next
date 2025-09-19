@@ -3,7 +3,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
 import { IoFlash } from "react-icons/io5";
-import Image from 'next/image'; 
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center flex items-center justify-center">
           D&apos;abord, un café pour bien commencer, ensuite, prenons contact
-          <IoFlash className="ml-2" />
+          <IoFlash className="ml-2 my-5 text-center flex items-center justify-center" />
         </p>
         <a href="mailto:e.arteinsana@gmail.com">
           <MagicButton
