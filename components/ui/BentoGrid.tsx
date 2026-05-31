@@ -4,12 +4,13 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 
 import { GlobeDemo } from "./GridGlobe";
-import Lottie from 'react-lottie-player'
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-import { useMediaQuery } from 'react-responsive';
+
+const Lottie = dynamic(() => import("react-lottie-player"), { ssr: false });
 
 // import Image from 'next/image';
 
@@ -55,15 +56,6 @@ export const BentoGridItem = ({
   const rightLists = ["CSS", "Next", "MySQL", "Kotlin", "Node"];
 
   const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "XMidYMid slice",
-    },
-  };
 
   const handleCopy = () => {
     const text = "e.arteinsana@gmail.com";

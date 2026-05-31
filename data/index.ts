@@ -74,6 +74,15 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
+      title: "BETC Website",
+      des: "Refonte du site de BETC",
+      img: "/betc.png",
+      video: "/betc_intro.mp4",
+      iconLists: ["/next.svg" ,"/tailwind.svg","/re.svg" ],
+      link: "https://www.betc.com/fr",
+    },
+    {
+      id: 2,
       title: "YouTube Clone",
       des: "Plateforme de streaming. Appel API avec RapidAPI.",
       img: "/YouTubeClone.png",
@@ -81,7 +90,7 @@ export const navItems = [
       link: "https://youtubeclone55.netlify.app",
     },
     {
-      id: 2,
+      id: 3,
       title: "Esquisse",
       des: "Application mobile pour Android: Modèle Vue Contrôleur.",
       img: "/esquisse.png",
@@ -89,7 +98,7 @@ export const navItems = [
       link: "https://github.com/adatechschool/projet-collectif-mobile-les-zencas",
     },
     {
-      id: 3,
+      id: 4,
       title: "OnMeuble ",
       des: "Site e-commerce : Création d'une API REST.",
       img: "/OnMeuble.png",
@@ -98,7 +107,7 @@ export const navItems = [
     },
     
     {
-      id: 4,
+      id: 5,
       title: "D-reader",
       des: "Extention Navigateur pour Chrome. Modification de Typo.",
       img: "/D-reader.png",
@@ -106,7 +115,7 @@ export const navItems = [
       link: "https://github.com/Arteinsana7/D-Reader/tree/Eliana",
     },
     {
-      id: 5,
+      id: 6,
       title: "The Daily Space.",
       des: "Appel API de la NASA. Une image de l'espace par jour.",
       img: "/Daily_space.png",
@@ -114,7 +123,7 @@ export const navItems = [
       link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
     },
     {
-      id: 6,
+      id: 7,
       title: "Zappel-Phillip",
       des: "Application mobile pour iOS. Gestion de taches.",
       img: "/zappel_phillip.png",
@@ -128,27 +137,34 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
+      title: "Developpeuse Full Stack / Créative",
+      desc: "Création de sites web et applications mobiles. Intégrations, animations, interactions, Design Systems, middleware, SEO/GEO & Accessibilité.",
+      className: "md:col-span-2",
+      thumbnail: "/icons_comm_violet.png",
+    },
+    {
+      id: 2,
       title: "Chargée de Communication Digitale & Événementielle.",
       desc: "Gestion de projet pour la mise en avant des produits à travers l'événementiel, les réseaux sociaux et les newsletters.",
       className: "md:col-span-2",
       thumbnail: "/icons_comm_violet.png",
     },
     {
-      id: 2,
+      id: 3,
       title: "Responsable de Ventes et Marketing Digitale",
       desc: "Vendeuse de produits Spécialisés. Analyse de données de vente, stratégies & campagnes en ligne.",
       className: "md:col-span-2", 
       thumbnail: "/icons-LOOP_V.png",
     },
     {
-      id: 3,
+      id:4,
       title: "Assistante à la Réalisation de Films",
       desc: "Logistique, organisation et planning d'un tournage. Régie, Management et gestion d'imprévus.",
       className: "md:col-span-2", 
       thumbnail: "/icons_orga_violet.png",
     },
     {
-      id: 4,
+      id: 5,
       title: "Graphiste Freelance",
       desc: "Conception - Maquettes - Direction artistique. Études de marché, tendances et positionnement.",
       className: "md:col-span-2",

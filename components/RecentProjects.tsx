@@ -29,11 +29,11 @@ const RecentProjects = () => {
                 >
                   <img src="/bg.png" alt="bgimg"  />
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute justify-center"
-                />
+                {item.video ? (
+                  <video src={item.video} autoPlay muted loop className="z-10 absolute justify-center" />
+                ) : (
+                  <img src={item.img} alt="cover" className="z-10 absolute justify-center" />
+                )}
               </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
