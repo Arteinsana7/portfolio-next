@@ -6,12 +6,12 @@ import { projects } from "@/data";
 import { PinContainer } from './ui/3d-pin'
 const RecentProjects = () => {
   return (
-    <div className="py-20 mt-5" id="projects">
+    <div className="py-20 mt-5 " id="projects">
       <h1 className="heading">
         Mes{" "}
         <span className="text-purple">projets</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-10 gap-16 ">
         {projects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
@@ -22,7 +22,7 @@ const RecentProjects = () => {
               href={item.link}    // Use item.link from the projects array
             >
               {/* This is the div that makes the images on the cards, on  */}
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden   lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[200]  mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
@@ -30,10 +30,22 @@ const RecentProjects = () => {
                   <img src="/bg.png" alt="bgimg"  />
                 </div>
                 {item.video ? (
-                  <video src={item.video} autoPlay muted loop className="z-10 absolute justify-center" />
-                ) : (
-                  <img src={item.img} alt="cover" className="z-10 absolute justify-center" />
-                )}
+  <video
+    src={item.video}
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="z-10 absolute top-0 left-0 w-full h-full object-cover p-2 lg:rounded-3xl"
+    
+  />
+) : (
+  <img
+    src={item.img}
+    alt="cover"
+    className="z-10 absolute top-0 left-0 w-full h-full object-cover p-3 lg:rounded-3xl"
+  />
+)}
               </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">

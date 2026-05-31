@@ -7,12 +7,12 @@ import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
 const Approach = () => {
   return (
     
-    <section className="w-full h-full lg:pt-30 mb-7 py-20" id="methodes">
+    <section className="w-full h-full lg:pt-30 px-10 py-20" id="methodes">
       <h1 className="heading">
-     Méthodologies<span className="text-purple"> de travail</span>
+     Méthodologies <span className="text-purple"> de travail</span>
       </h1>
       
-      <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
+      <div className="my-20 py-10 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
        
         <Card
           title="Communication & Organisation"
