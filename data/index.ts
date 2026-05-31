@@ -77,7 +77,7 @@ export const navItems = [
       title: "BETC Website",
       des: "Refonte du site de l'agence publicitaire BETC ",
       img: "/betc.png",
-      video: "/betc_intro.mp4",
+      video: "/Betc_intro.mp4",
       iconLists: ["/next.svg" ,"/tailwind.svg","/re.svg" ],
       link: "https://www.betc.com/fr",
     },

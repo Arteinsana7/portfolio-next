@@ -4,27 +4,34 @@ import { useRef, useEffect } from 'react'
 import { initScene } from './scene'
 
 export default function HoloBackground() {
-   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
-   useEffect(() => {
-    if (typeof window === 'undefined') return // ✅
+  useEffect(() => {
+    if (typeof window === 'undefined') return
     if (!canvasRef.current) return
 
-  console.log('🎨 HoloBackground monté, canvas:', canvasRef.current) // ✅
-    const cleanup = initScene(canvasRef.current)
-    return cleanup
+    // ✅ Délai pour Safari
+    const timer = setTimeout(() => {
+      if (!canvasRef.current) return
+      const cleanup = initScene(canvasRef.current)
+      return () => cleanup?.()
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, [])
-   return (<canvas
-    ref={canvasRef}
-    style={{
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
         position: 'absolute',
         inset: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: 0, // ✅
+        width: '100%',
+        height: '100%',
+        zIndex: 0,
         pointerEvents: 'none',
         overflow: 'hidden',
       }}
     />
-   )
+  )
 }
