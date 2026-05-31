@@ -75,11 +75,20 @@ export const navItems = [
     {
       id: 1,
       title: "BETC Website",
-      des: "Refonte du site de BETC",
+      des: "Refonte du site de l'agence publicitaire BETC ",
       img: "/betc.png",
       video: "/betc_intro.mp4",
       iconLists: ["/next.svg" ,"/tailwind.svg","/re.svg" ],
       link: "https://www.betc.com/fr",
+    },
+    {
+      id: 2,
+      title: "Louis Donders",
+      des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
+      img: "/donders-image.png",
+      // video: "/donders.mp4",
+      iconLists: ["/re.svg","rapidapi-icon.svg", "material-ui-1.svg" ],
+      link: "https://louisdonders.com",
     },
     {
       id: 2,
@@ -158,7 +167,7 @@ export const navItems = [
     },
     {
       id:4,
-      title: "Assistante à la Réalisation de Films",
+      title: "Assistante à la Réalisation et production de Films",
       desc: "Logistique, organisation et planning d'un tournage. Régie, Management et gestion d'imprévus.",
       className: "md:col-span-2", 
       thumbnail: "/icons_orga_violet.png",
