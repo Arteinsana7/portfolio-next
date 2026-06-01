@@ -78,7 +78,7 @@ export const navItems = [
       des: "Refonte du site de l'agence publicitaire BETC ",
       img: "/betc.png",
       video: "/Betc_intro.mp4",
-      iconLists: ["/next.svg" ,"/tailwind.svg","/re.svg" ],
+      iconLists: ["/next.svg" ,"/tailwind.svg","/anime-js.png", "/storybook-icon.png" ],
       link: "https://www.betc.com/fr",
     },
     {
@@ -87,7 +87,7 @@ export const navItems = [
       des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
       img: "/donders-image.png",
       // video: "/donders.mp4",
-      iconLists: ["/re.svg","rapidapi-icon.svg", "material-ui-1.svg" ],
+      iconLists: ["/re.svg", "/contentful.png" ],
       link: "https://louisdonders.com",
     },
     {
