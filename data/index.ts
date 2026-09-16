@@ -98,16 +98,32 @@ export const navItems = [
       iconLists: ["/re.svg","rapidapi-icon.svg", "material-ui-1.svg" ],
       link: "https://youtubeclone55.netlify.app",
     },
-    {
+   {
       id: 3,
-      title: "Esquisse",
-      des: "Application mobile pour Android: Modèle Vue Contrôleur.",
-      img: "/esquisse.png",
-      iconLists: ["/kotlin.svg", "/spring.svg", "/postgresql.svg"],
-      link: "https://github.com/adatechschool/projet-collectif-mobile-les-zencas",
+      title: "La synthèse ",
+      des: "Blog sur les Synths Modulaires. Architecture MERN",
+      video: "/synthese.mp4",
+      iconLists: ["/dock.svg","/expressjs-icon_w.png","/typescript-.svg","/re.svg"],
+      link: "https://github.com/Arteinsana7/la-synthese/tree/frontend",
     },
     {
       id: 4,
+      title: "Appear ",
+      des: "Design d'interface UI - Design System",
+      img: "/appear-design.png",
+      iconLists: ["/figma.svg"],
+      link: "https://www.figma.com/design/il0CFFxBenj0oDFi8L9ZmL/Design-d-interface-ecv?node-id=52-1175&t=BdZestxBdHU7spLh-1",
+    },
+    {
+      id: 5,
+      title: "Orka.tax ",
+      des: "Case d'étude : proposition d'un nouveau user flow pour l'application Orka.tax",
+      img: "/Orka.png",
+      iconLists: ["/re.svg", "/expressjs-icon_w.png","/node-js.svg","/supabase-logo-icon.svg"],
+      link: "https://www.figma.com/design/HlbDcM2eurxoTsYNoZmVjb/Orka-User-Flow?node-id=0-1&t=e9B9TeP8vapFhsQ1-1",
+    },
+    {
+      id: 6,
       title: "OnMeuble ",
       des: "Site e-commerce : Création d'une API REST.",
       img: "/OnMeuble.png",
@@ -116,7 +132,7 @@ export const navItems = [
     },
     
     {
-      id: 5,
+      id: 7,
       title: "D-reader",
       des: "Extention Navigateur pour Chrome. Modification de Typo.",
       img: "/D-reader.png",
@@ -124,21 +140,22 @@ export const navItems = [
       link: "https://github.com/Arteinsana7/D-Reader/tree/Eliana",
     },
     {
-      id: 6,
-      title: "The Daily Space.",
-      des: "Appel API de la NASA. Une image de l'espace par jour.",
+      id: 8,
+      title: "The Daily Space",
+      des: "Site web sur l'actualité de l'espace. Appel API de la NASA",
       img: "/Daily_space.png",
       iconLists: ["/file-type-js-official.svg","/html5.svg","/file-type-css.svg"],
       link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
     },
     {
-      id: 7,
-      title: "Zappel-Phillip",
-      des: "Application mobile pour iOS. Gestion de taches.",
-      img: "/zappel_phillip.png",
-      iconLists: ["/swift.svg","/file-type-xcode.svg"],
-      link: "https://github.com/Arteinsana7/Zappel-Philipp",
+      id: 9,
+      title: "Loop",
+      des: "Application .",
+      img: "/Daily_space.png",
+      iconLists: ["/file-type-js-official.svg","/html5.svg","/file-type-css.svg"],
+      link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
     },
+  
   ];
   
   
