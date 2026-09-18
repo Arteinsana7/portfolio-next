@@ -82,15 +82,16 @@ export const navItems = [
       iconLists: ["/next.svg" ,"/tailwind.svg","/anime-js.png", "/storybook-icon.png" ],
       link: "https://www.betc.com/fr",
     },
-     {
-      id: 2,
-      title: "Appear ",
-      des: "Design d'interface UI - Design System",
-      img: "/appear-design.png",
-      iconLists: ["/figma.svg"],
-      link: "https://www.figma.com/design/il0CFFxBenj0oDFi8L9ZmL/Design-d-interface-ecv?node-id=52-1175&t=BdZestxBdHU7spLh-1",
-    },
     {
+      id: 2,
+      title: "Louis Donders",
+      des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
+      video: "/donders.mp4",
+      // video: "/donders.mp4",
+      iconLists: ["/re.svg", "/contentful.png" ],
+      link: "https://louisdonders.com",
+    },
+     {
       id: 3,
       title: "La synthèse",
       des: "Blog sur les Synths Modulaires. Architecture MERN",
@@ -100,16 +101,6 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Louis Donders",
-      des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
-      video: "/donders.mp4",
-      // video: "/donders.mp4",
-      iconLists: ["/re.svg", "/contentful.png" ],
-      link: "https://louisdonders.com",
-    },
-     
-    {
-      id: 5,
       title: "YouTube Clone",
       des: "Plateforme de streaming. Appel API avec RapidAPI",
       img: "/YouTubeClone.png",
@@ -117,7 +108,14 @@ export const navItems = [
       link: "https://youtubeclone55.netlify.app",
     },
   
-   
+    {
+      id: 5,
+      title: "Appear ",
+      des: "Design d'interface UI - Design System",
+      img: "/appear-design.png",
+      iconLists: ["/figma.svg"],
+      link: "https://www.figma.com/design/il0CFFxBenj0oDFi8L9ZmL/Design-d-interface-ecv?node-id=52-1175&t=BdZestxBdHU7spLh-1",
+    },
     {
       id: 6,
       title: "Orka.tax ",
@@ -126,24 +124,17 @@ export const navItems = [
       iconLists: ["/figma.svg"],
       link: "https://www.figma.com/design/HlbDcM2eurxoTsYNoZmVjb/Orka-User-Flow?node-id=0-1&t=e9B9TeP8vapFhsQ1-1",
     },
-     {
+    {
       id: 7,
-      title: "Loop",
-      des: "Prgressive Web App pour parcours culturel urbain. Slow Tourism.",
-      img: "/loop.png",
-      iconLists: ["/dock.svg","/expressjs-icon_w.png","/typescript-.svg","/re.svg"],
-      link: "https://github.com/adatechschool/loop-app",
+      title: "OnMeuble ",
+      des: "Site e-commerce : Création d'une API REST",
+      img: "/OnMeuble.png",
+      iconLists: ["/re.svg", "/expressjs-icon_w.png","/node-js.svg","/supabase-logo-icon.svg"],
+      link: "https://github.com/adatechschool/onmeuble",
     },
-     {
+    
+    {
       id: 8,
-      title: "The Daily Space",
-      des: "Site web sur l'actualité de l'espace. Appel API de la NASA",
-      img: "/Daily_space.png",
-      iconLists: ["/file-type-js-official.svg","/html5.svg","/file-type-css.svg"],
-      link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
-    },
-     {
-      id: 9,
       title: "D-reader",
       des: "Extention Navigateur pour Chrome. Modification de Typo dans la navigateur",
       img: "/D-reader.png",
@@ -151,12 +142,20 @@ export const navItems = [
       link: "https://github.com/Arteinsana7/D-Reader/tree/Eliana",
     },
     {
+      id: 9,
+      title: "The Daily Space",
+      des: "Site web sur l'actualité de l'espace. Appel API de la NASA",
+      img: "/Daily_space.png",
+      iconLists: ["/file-type-js-official.svg","/html5.svg","/file-type-css.svg"],
+      link: "https://quanghung0.github.io/The-Daily-Space/planetes.html",
+    },
+    {
       id: 10,
-      title: "OnMeuble ",
-      des: "Site e-commerce : Création d'une API REST",
-      img: "/OnMeuble.png",
-      iconLists: ["/re.svg", "/expressjs-icon_w.png","/node-js.svg","/supabase-logo-icon.svg"],
-      link: "https://github.com/adatechschool/onmeuble",
+      title: "Loop",
+      des: "Prgressive Web App pour parcours culturel urbain. Slow Tourism.",
+      img: "/loop.png",
+      iconLists: ["/dock.svg","/expressjs-icon_w.png","/typescript-.svg","/re.svg"],
+      link: "https://github.com/adatechschool/loop-app",
     },
 
   

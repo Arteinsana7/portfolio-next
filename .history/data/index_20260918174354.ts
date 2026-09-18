@@ -83,7 +83,7 @@ export const navItems = [
       link: "https://www.betc.com/fr",
     },
      {
-      id: 2,
+      id: 5,
       title: "Appear ",
       des: "Design d'interface UI - Design System",
       img: "/appear-design.png",
@@ -99,7 +99,7 @@ export const navItems = [
       link: "https://github.com/Arteinsana7/la-synthese/tree/frontend",
     },
     {
-      id: 4,
+      id: 2,
       title: "Louis Donders",
       des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
       video: "/donders.mp4",
@@ -109,7 +109,7 @@ export const navItems = [
     },
      
     {
-      id: 5,
+      id: 4,
       title: "YouTube Clone",
       des: "Plateforme de streaming. Appel API avec RapidAPI",
       img: "/YouTubeClone.png",

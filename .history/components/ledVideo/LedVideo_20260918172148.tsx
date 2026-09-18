@@ -46,8 +46,8 @@ const LedVideo = ({
             canvas.width = rect.width;
             canvas.height = rect.height;
 
-            cols = Math.round(canvas.width / (cellSize + gap));
-            rows = Math.round(canvas.height / (cellSize + gap));
+            cols = Math.floor(canvas.width / (cellSize + gap));
+            rows = Math.floor(canvas.height / (cellSize + gap));
 
             sampleCanvas.width = cols;
             sampleCanvas.height = rows;
@@ -91,9 +91,6 @@ const LedVideo = ({
 
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    const effectiveCellW = canvas.width / cols;
-                    const effectiveCellH = canvas.height / rows;
-
                     for (let y = 0; y < rows; y++) {
                         for (let x = 0; x < cols; x++) {
                             const i = (y * cols + x) * 4;
@@ -101,24 +98,23 @@ const LedVideo = ({
                             const g = frame[i + 1];
                             const b = frame[i + 2];
 
-                            const px = x * effectiveCellW;
-                            const py = y * effectiveCellH;
-                            const effectiveDotSize = Math.min(effectiveCellW, effectiveCellH) - gap;
+                            const px = x * (cellSize + gap);
+                            const py = y * (cellSize + gap);
 
                             ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
 
                             if (shape === "circle") {
                                 ctx.beginPath();
                                 ctx.arc(
-                                    px + effectiveCellW / 2,
-                                    py + effectiveCellH / 2,
-                                    effectiveDotSize / 2,
+                                    px + cellSize / 2,
+                                    py + cellSize / 2,
+                                    cellSize / 2,
                                     0,
                                     Math.PI * 2
                                 );
                                 ctx.fill();
                             } else {
-                                ctx.fillRect(px, py, effectiveDotSize, effectiveDotSize);
+                                ctx.fillRect(px, py, cellSize, cellSize);
                             }
                         }
                     }
@@ -131,14 +127,10 @@ const LedVideo = ({
         video.play().catch(() => { });
         draw();
 
-        const resizeObserver = new ResizeObserver(() => setup());
-        if (canvas.parentElement) {
-            resizeObserver.observe(canvas.parentElement);
-        }
-
+        window.addEventListener("resize", setup);
         return () => {
             cancelAnimationFrame(animationId);
-            resizeObserver.disconnect();
+            window.removeEventListener("resize", setup);
         };
     }, [cellSize, gap, shape, repeat]);
 

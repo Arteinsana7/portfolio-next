@@ -83,14 +83,31 @@ export const navItems = [
       link: "https://www.betc.com/fr",
     },
      {
-      id: 2,
+      id: 5,
       title: "Appear ",
       des: "Design d'interface UI - Design System",
       img: "/appear-design.png",
       iconLists: ["/figma.svg"],
       link: "https://www.figma.com/design/il0CFFxBenj0oDFi8L9ZmL/Design-d-interface-ecv?node-id=52-1175&t=BdZestxBdHU7spLh-1",
     },
+     {
+      id: 6,
+      title: "Orka.tax ",
+      des: "Case d'étude : proposition d'un nouveau user flow pour l'application Orka.tax",
+      img: "/Orka.png",
+      iconLists: ["/figma.svg"],
+      link: "https://www.figma.com/design/HlbDcM2eurxoTsYNoZmVjb/Orka-User-Flow?node-id=0-1&t=e9B9TeP8vapFhsQ1-1",
+    },
     {
+      id: 2,
+      title: "Louis Donders",
+      des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
+      video: "/donders.mp4",
+      // video: "/donders.mp4",
+      iconLists: ["/re.svg", "/contentful.png" ],
+      link: "https://louisdonders.com",
+    },
+     {
       id: 3,
       title: "La synthèse",
       des: "Blog sur les Synths Modulaires. Architecture MERN",
@@ -100,16 +117,6 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Louis Donders",
-      des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
-      video: "/donders.mp4",
-      // video: "/donders.mp4",
-      iconLists: ["/re.svg", "/contentful.png" ],
-      link: "https://louisdonders.com",
-    },
-     
-    {
-      id: 5,
       title: "YouTube Clone",
       des: "Plateforme de streaming. Appel API avec RapidAPI",
       img: "/YouTubeClone.png",
@@ -118,14 +125,7 @@ export const navItems = [
     },
   
    
-    {
-      id: 6,
-      title: "Orka.tax ",
-      des: "Case d'étude : proposition d'un nouveau user flow pour l'application Orka.tax",
-      img: "/Orka.png",
-      iconLists: ["/figma.svg"],
-      link: "https://www.figma.com/design/HlbDcM2eurxoTsYNoZmVjb/Orka-User-Flow?node-id=0-1&t=e9B9TeP8vapFhsQ1-1",
-    },
+   
      {
       id: 7,
       title: "Loop",

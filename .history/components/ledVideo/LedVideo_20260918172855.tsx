@@ -94,6 +94,7 @@ const LedVideo = ({
                     const effectiveCellW = canvas.width / cols;
                     const effectiveCellH = canvas.height / rows;
 
+
                     for (let y = 0; y < rows; y++) {
                         for (let x = 0; x < cols; x++) {
                             const i = (y * cols + x) * 4;
@@ -118,7 +119,7 @@ const LedVideo = ({
                                 );
                                 ctx.fill();
                             } else {
-                                ctx.fillRect(px, py, effectiveDotSize, effectiveDotSize);
+                                ctx.fillRect(px, py, cellSize, cellSize);
                             }
                         }
                     }
@@ -131,14 +132,10 @@ const LedVideo = ({
         video.play().catch(() => { });
         draw();
 
-        const resizeObserver = new ResizeObserver(() => setup());
-        if (canvas.parentElement) {
-            resizeObserver.observe(canvas.parentElement);
-        }
-
+        window.addEventListener("resize", setup);
         return () => {
             cancelAnimationFrame(animationId);
-            resizeObserver.disconnect();
+            window.removeEventListener("resize", setup);
         };
     }, [cellSize, gap, shape, repeat]);
 

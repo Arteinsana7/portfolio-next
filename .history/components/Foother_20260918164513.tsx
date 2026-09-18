@@ -15,7 +15,15 @@ const Footer = () => {
 
       {/* Fondu en bas */}
 
-
+      {/* <div className="w-full absolute left-0 -bottom-72 min-h-96">
+        <Image
+          src="/footer-grid.svg"
+          alt="grid"
+          layout="fill" // Make the image fill its container
+          objectFit="cover" // Cover the container
+          className="opacity-50"
+        />
+      </div> */}
 
       <div className="flex flex-col items-center p-4  relative z-10">
         <h1 className="heading lg:max-w-[45vw] p-1">
