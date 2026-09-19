@@ -18,7 +18,7 @@ export const TextGenerateEffect = ({
     animate(
       "span",
       {
-        opacity: 1,
+        opacity: [0, 1],
       },
       {
         duration: 2,
@@ -39,7 +39,7 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={keyPrefix + word + lineIdx + idx}
-              className={`${colorClass} opacity-0`}
+              className={colorClass}
             >
               {word}{" "}
             </motion.span>

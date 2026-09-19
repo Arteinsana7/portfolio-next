@@ -8,6 +8,7 @@ interface LedVideoProps {
     gap?: number;
     shape?: "circle" | "square";
     className?: string;
+    minCellSize?: number;
     repeat?: number; // nombre de répétitions horizontales de la vidéo
 }
 
@@ -18,6 +19,7 @@ const LedVideo = ({
     shape = "circle",
     className = "",
     repeat = 1,
+    minCellSize = 4,
 }: LedVideoProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -38,6 +40,8 @@ const LedVideo = ({
         let animationId: number;
         let cols = 0;
         let rows = 0;
+        let effectiveCellSize = cellSize;
+        let effectiveGap = gap;
 
         const setup = () => {
             const parent = canvas.parentElement;
@@ -46,8 +50,14 @@ const LedVideo = ({
             canvas.width = rect.width;
             canvas.height = rect.height;
 
-            cols = Math.round(canvas.width / (cellSize + gap));
-            rows = Math.round(canvas.height / (cellSize + gap));
+            // Réduit la taille des cellules sur les petits écrans pour garder plus de détail
+            const referenceWidth = 700; // largeur "desktop" de référence
+            const scale = Math.min(1, rect.width / referenceWidth);
+            effectiveCellSize = Math.max(minCellSize, cellSize * scale);
+            effectiveGap = Math.max(1, gap * scale);
+
+            cols = Math.round(canvas.width / (effectiveCellSize + effectiveGap));
+            rows = Math.round(canvas.height / (effectiveCellSize + effectiveGap));
 
             sampleCanvas.width = cols;
             sampleCanvas.height = rows;
@@ -64,18 +74,15 @@ const LedVideo = ({
                     const segmentWidth = cols / repeat;
 
                     for (let s = 0; s < repeat; s++) {
-                        // Calcule un recadrage "cover" de la vidéo pour ce segment
                         const segAspect = segmentWidth / rows;
                         const videoAspect = vw / vh;
 
                         let sx = 0, sy = 0, sw = vw, sh = vh;
 
                         if (videoAspect > segAspect) {
-                            // vidéo trop large -> on rogne les côtés
                             sw = vh * segAspect;
                             sx = (vw - sw) / 2;
                         } else {
-                            // vidéo trop haute (cas vertical typique) -> on rogne haut/bas
                             sh = vw / segAspect;
                             sy = (vh - sh) / 2;
                         }
@@ -103,7 +110,7 @@ const LedVideo = ({
 
                             const px = x * effectiveCellW;
                             const py = y * effectiveCellH;
-                            const effectiveDotSize = Math.min(effectiveCellW, effectiveCellH) - gap;
+                            const effectiveDotSize = Math.min(effectiveCellW, effectiveCellH) - effectiveGap;
 
                             ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
 
@@ -128,9 +135,19 @@ const LedVideo = ({
         };
 
         setup();
+
+        const startPlayback = () => {
+            video.play().catch(() => { });
+            draw();
+        };
+
+        if (video.readyState >= 3) {
+            startPlayback();
+        } else {
+            video.addEventListener("canplaythrough", startPlayback, { once: true });
+        }
         video.play().catch(() => { });
         draw();
-
         const resizeObserver = new ResizeObserver(() => setup());
         if (canvas.parentElement) {
             resizeObserver.observe(canvas.parentElement);
@@ -139,8 +156,9 @@ const LedVideo = ({
         return () => {
             cancelAnimationFrame(animationId);
             resizeObserver.disconnect();
+            video.removeEventListener("canplaythrough", startPlayback);
         };
-    }, [cellSize, gap, shape, repeat]);
+    }, [cellSize, gap, shape, repeat, minCellSize]);
 
     return (
         <div
@@ -154,6 +172,7 @@ const LedVideo = ({
                 loop
                 playsInline
                 autoPlay
+                preload="auto"
                 className="hidden"
             />
             <canvas ref={sampleCanvasRef} className="hidden" />

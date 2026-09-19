@@ -130,7 +130,7 @@ export const navItems = [
       id: 7,
       title: "Loop",
       des: "Prgressive Web App pour parcours culturel urbain. Slow Tourism.",
-      img: "/loop.png",
+      img: "/Loop.png",
       iconLists: ["/dock.svg","/expressjs-icon_w.png","/typescript-.svg","/re.svg"],
       link: "https://github.com/adatechschool/loop-app",
     },
@@ -183,7 +183,7 @@ export const navItems = [
   {
     id: 3,
     title: "Hazy",
-    des: "Création d'une identité visuelle pour une cave a bère artisanale",
+    des: "Création d'une identité visuelle pour une cave à bière artisanale",
     img: "/hazy-2.jpg", 
     iconLists: [], 
     link: "",

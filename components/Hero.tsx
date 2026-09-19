@@ -38,8 +38,7 @@ const Hero = () => {
           <TextGenerateEffect
             words={"Bonjour, je suis Eliana,\nDesigneuse Digitale\net Développeuse créative"}
             mobileWords={"Bonjour,\nje suis Eliana,\nDesigneuse\nDigitale\net Développeuse\ncréative"}
-            className="text-center text-[40px] md:text-5xl lg:text-6xl mt-2 md:mt-0"
-          />
+            className="text-center text-[40px] md:text-5xl lg:text-6xl -mt-8 sm:-mt-4  md:mt-0" />
 
           {/* 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
