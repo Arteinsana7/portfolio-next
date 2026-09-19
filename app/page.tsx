@@ -1,8 +1,9 @@
 // import Image from "next/image";
 import Hero from "../components/Hero";
 import Grid from "../components/Grid";
+import GraphicProjects from "../components/GraphicProjets";
 
-import { FloatingNav} from "../components/ui/FloatingNav";
+import { FloatingNav } from "../components/ui/FloatingNav";
 import { navItems } from "@/data";
 import RecentProjects from "@/components/RecentProjects";
 import Experience from "@/components/Experience";
@@ -17,9 +18,10 @@ const Home = () => {
         <Hero />
         <Grid />
         <RecentProjects />
+        <GraphicProjects />
         <Experience />
         <Approach />
-        <Foother/>
+        <Foother />
       </div>
     </main>
   );

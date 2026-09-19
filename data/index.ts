@@ -11,13 +11,13 @@ export const navItems = [
   export const gridItems = [
     {
       id: 1,
-      title: "Créativité, Réflexivité",
-      description: "et persévérance",
+      title: "Curieuse et Persévérante",
+      // description: "et persévérance",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
-      titleClassName: "justify-end",
-     
-      video: "/corail.mov",
+      titleClassName: "justify-end ",
+      video: "/corail-2.mp4",
+      // link : "https://cargocollective.com/Arteinsana",
       spareImg: "",
     },
     {
@@ -42,12 +42,13 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Riche d'expérience Communication & Marketing",
-      description: "Excellent Relationnel",
+      title: "Riche d'expériences ",
+      description: "en Communication & Marketing",
       className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-      imgClassName: "",
+     imgClassName: "translate-x-4 -translate-y-2",
       titleClassName: "justify-start",
       img: "/grid.svg",
+     
       spareImg: "/b4.svg",
     },
   
@@ -63,7 +64,7 @@ export const navItems = [
     },
     {
       id: 6,
-      title: "Contactez-Moi !",
+      title: "Contactez-Moi ",
       className: "lg:col-span-2 md:col-span-3 md:row-span-1",
       imgClassName: "",
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
@@ -103,7 +104,6 @@ export const navItems = [
       title: "Louis Donders",
       des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
       video: "/donders.mp4",
-      // video: "/donders.mp4",
       iconLists: ["/re.svg", "/contentful.png" ],
       link: "https://louisdonders.com",
     },
@@ -161,6 +161,35 @@ export const navItems = [
 
   
   ];
+
+
+  export const graphicProjects = [
+  {
+    id: 1,
+    title: "Mea Pulpa",
+    des: "Logo et identité visuelle pour agent commerciale de vins naturels",
+    img: "/Mea-Pulpa.jpg", 
+    iconLists: [], 
+    link: "",
+  },
+  {
+    id: 2,
+    title: "Atelier Meemosa",
+    des: "Création d'une identité pour une créatrice de bijoux",
+    img: "/Meemosa.jpg", 
+    iconLists: [], 
+    link: "",
+  },
+  {
+    id: 3,
+    title: "Hazy",
+    des: "Création d'une identité visuelle pour une cave a bère artisanale",
+    img: "/hazy-2.jpg", 
+    iconLists: [], 
+    link: "",
+  },
+ 
+];
   
   
   

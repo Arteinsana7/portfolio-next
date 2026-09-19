@@ -43,8 +43,7 @@ const RecentProjects = () => {
                       muted
                       loop
                       playsInline
-                      className="z-10 absolute inset-0 w-full h-full object-cover p-4 rounded-3xl"
-                    />
+                      className="z-10 absolute inset-0 w-full h-full object-cover object-top p-4 rounded-3xl" />
                   ) : (
                     <img
                       src={item.img}

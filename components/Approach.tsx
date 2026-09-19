@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
@@ -17,7 +17,7 @@ const Approach = () => {
         <Card
           title="Communication & Organisation"
           icon={<AceternityIcon order="Phase 1" />}
-          des="Je valorise la collaboration continue et les échanges, ce qui me permet de mieux identifier les besoins et d’évaluer les changements nécessaires."
+          des="Je valorise la continuité des échanges et la clarté des objectifs pour une collaboration efficace"
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -28,7 +28,7 @@ const Approach = () => {
         <Card
           title="Adaptabilité & Réactivité"
           icon={<AceternityIcon order="Phase 2" />}
-          des="Je gère les projets de manière itérative, en divisant les tâches en sprints ou en cycles de développement courts."
+          des="Je gère les projets de manière itérative, valorisant l'analyse, pour pouvoir faire les changements nécessaires"
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -46,7 +46,7 @@ const Approach = () => {
         <Card
           title="Tests & Revues"
           icon={<AceternityIcon order="Phase 3" />}
-          des="Je recherche constamment des retours d'information afin de identifier les points d'optimisation et guider des nouvelles versions."
+          des="Je recherche constamment des retours d'information afin d'identifier les points d'optimisation et guider des nouvelles versions"
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -74,6 +74,32 @@ const Card = ({
   des: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile || !cardRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHovered(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [isMobile]);
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
