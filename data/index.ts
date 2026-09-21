@@ -16,7 +16,7 @@ export const navItems = [
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
       titleClassName: "justify-end ",
-      video: "/corail-2.mp4",
+      video: "/corail-2-web.mp4",
       // link : "https://cargocollective.com/Arteinsana",
       spareImg: "",
     },
@@ -79,7 +79,7 @@ export const navItems = [
       title: "BETC Website",
       des: "Refonte du site de l'agence publicitaire BETC ",
       img: "/betc.png",
-      video: "/Betc_intro.mp4",
+      video: "/Betc_intro-web.mp4",
       iconLists: ["/next.svg" ,"/tailwind.svg","/anime-js.png", "/storybook-icon.png" ],
       link: "https://www.betc.com/fr",
     },
@@ -95,7 +95,7 @@ export const navItems = [
       id: 3,
       title: "La synthèse",
       des: "Blog sur les Synths Modulaires. Architecture MERN",
-      video: "/synthese.mp4",
+      video: "/synthese-web.mp4",
       iconLists: ["/dock.svg","/expressjs-icon_w.png","/typescript-.svg","/re.svg"],
       link: "https://github.com/Arteinsana7/la-synthese/tree/frontend",
     },
@@ -103,7 +103,7 @@ export const navItems = [
       id: 4,
       title: "Louis Donders",
       des: "Site web pour l'artiste peintre et illustrateur Néerlandais",
-      video: "/donders.mp4",
+      video: "/donders-web.mp4",
       iconLists: ["/re.svg", "/contentful.png" ],
       link: "https://louisdonders.com",
     },
@@ -129,7 +129,7 @@ export const navItems = [
      {
       id: 7,
       title: "Loop",
-      des: "Prgressive Web App pour parcours culturel urbain. Slow Tourism.",
+      des: "Progressive Web App pour parcours culturel urbain. Slow Tourism.",
       img: "/Loop.png",
       iconLists: ["/dock.svg","/expressjs-icon_w.png","/typescript-.svg","/re.svg"],
       link: "https://github.com/adatechschool/loop-app",
@@ -158,6 +158,15 @@ export const navItems = [
       iconLists: ["/re.svg", "/expressjs-icon_w.png","/node-js.svg","/supabase-logo-icon.svg"],
       link: "https://github.com/adatechschool/onmeuble",
     },
+    {
+      id: 11,
+      title: "internal project ",
+      des: "Site e-commerce : Création d'une API REST",
+      // img: "/Internal_Projet.mov",
+      video: "/Internal_Projet-web.mp4",
+      iconLists: ["/re.svg"],
+      link: "https://github.com/adatechschool/onmeuble",
+    },
 
   
   ];
@@ -170,7 +179,7 @@ export const navItems = [
     des: "Logo et identité visuelle pour agent commerciale de vins naturels",
     img: "/Mea-Pulpa.jpg", 
     iconLists: [], 
-    link: "",
+    // link: "",
   },
   {
     id: 2,
@@ -178,7 +187,7 @@ export const navItems = [
     des: "Création d'une identité pour une créatrice de bijoux",
     img: "/Meemosa.jpg", 
     iconLists: [], 
-    link: "",
+    // link: "",
   },
   {
     id: 3,
@@ -186,7 +195,7 @@ export const navItems = [
     des: "Création d'une identité visuelle pour une cave à bière artisanale",
     img: "/hazy-2.jpg", 
     iconLists: [], 
-    link: "",
+    // link: "",
   },
  
 ];

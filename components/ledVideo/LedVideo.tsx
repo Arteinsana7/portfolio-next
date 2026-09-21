@@ -9,7 +9,7 @@ interface LedVideoProps {
     shape?: "circle" | "square";
     className?: string;
     minCellSize?: number;
-    repeat?: number; // nombre de répétitions horizontales de la vidéo
+    repeat?: number;
 }
 
 const LedVideo = ({
@@ -32,9 +32,7 @@ const LedVideo = ({
         if (!video || !canvas || !sampleCanvas) return;
 
         const ctx = canvas.getContext("2d");
-        const sampleCtx = sampleCanvas.getContext("2d", {
-            willReadFrequently: true,
-        });
+        const sampleCtx = sampleCanvas.getContext("2d");
         if (!ctx || !sampleCtx) return;
 
         let animationId: number;
@@ -42,16 +40,18 @@ const LedVideo = ({
         let rows = 0;
         let effectiveCellSize = cellSize;
         let effectiveGap = gap;
+        let lastDrawTime = 0;
 
         const setup = () => {
             const parent = canvas.parentElement;
             if (!parent) return;
             const rect = parent.getBoundingClientRect();
+            if (rect.width === 0 || rect.height === 0) return;
+
             canvas.width = rect.width;
             canvas.height = rect.height;
 
-            // Réduit la taille des cellules sur les petits écrans pour garder plus de détail
-            const referenceWidth = 700; // largeur "desktop" de référence
+            const referenceWidth = 700;
             const scale = Math.min(1, rect.width / referenceWidth);
             effectiveCellSize = Math.max(minCellSize, cellSize * scale);
             effectiveGap = Math.max(1, gap * scale);
@@ -59,75 +59,88 @@ const LedVideo = ({
             cols = Math.round(canvas.width / (effectiveCellSize + effectiveGap));
             rows = Math.round(canvas.height / (effectiveCellSize + effectiveGap));
 
+            if (cols <= 0 || rows <= 0) return;
+
             sampleCanvas.width = cols;
             sampleCanvas.height = rows;
         };
 
         const draw = () => {
+            const now = performance.now();
+            if (now - lastDrawTime < 1000 / 30) {
+                animationId = requestAnimationFrame(draw);
+                return;
+            }
+            lastDrawTime = now;
+
             if (video.readyState >= 2 && cols > 0 && rows > 0) {
                 const vw = video.videoWidth;
                 const vh = video.videoHeight;
 
                 if (vw > 0 && vh > 0) {
-                    sampleCtx.clearRect(0, 0, cols, rows);
+                    try {
+                        sampleCtx.clearRect(0, 0, cols, rows);
 
-                    const segmentWidth = cols / repeat;
+                        const segmentWidth = cols / repeat;
 
-                    for (let s = 0; s < repeat; s++) {
-                        const segAspect = segmentWidth / rows;
-                        const videoAspect = vw / vh;
+                        for (let s = 0; s < repeat; s++) {
+                            const segAspect = segmentWidth / rows;
+                            const videoAspect = vw / vh;
 
-                        let sx = 0, sy = 0, sw = vw, sh = vh;
+                            let sx = 0, sy = 0, sw = vw, sh = vh;
 
-                        if (videoAspect > segAspect) {
-                            sw = vh * segAspect;
-                            sx = (vw - sw) / 2;
-                        } else {
-                            sh = vw / segAspect;
-                            sy = (vh - sh) / 2;
+                            if (videoAspect > segAspect) {
+                                sw = vh * segAspect;
+                                sx = (vw - sw) / 2;
+                            } else {
+                                sh = vw / segAspect;
+                                sy = (vh - sh) / 2;
+                            }
+
+                            sampleCtx.drawImage(
+                                video,
+                                sx, sy, sw, sh,
+                                s * segmentWidth, 0, segmentWidth, rows
+                            );
                         }
 
-                        sampleCtx.drawImage(
-                            video,
-                            sx, sy, sw, sh,
-                            s * segmentWidth, 0, segmentWidth, rows
-                        );
-                    }
+                        const frame = sampleCtx.getImageData(0, 0, cols, rows).data;
 
-                    const frame = sampleCtx.getImageData(0, 0, cols, rows).data;
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        const effectiveCellW = canvas.width / cols;
+                        const effectiveCellH = canvas.height / rows;
 
-                    const effectiveCellW = canvas.width / cols;
-                    const effectiveCellH = canvas.height / rows;
+                        for (let y = 0; y < rows; y++) {
+                            for (let x = 0; x < cols; x++) {
+                                const i = (y * cols + x) * 4;
+                                const r = frame[i];
+                                const g = frame[i + 1];
+                                const b = frame[i + 2];
 
-                    for (let y = 0; y < rows; y++) {
-                        for (let x = 0; x < cols; x++) {
-                            const i = (y * cols + x) * 4;
-                            const r = frame[i];
-                            const g = frame[i + 1];
-                            const b = frame[i + 2];
+                                const px = x * effectiveCellW;
+                                const py = y * effectiveCellH;
+                                const effectiveDotSize = Math.min(effectiveCellW, effectiveCellH) - effectiveGap;
 
-                            const px = x * effectiveCellW;
-                            const py = y * effectiveCellH;
-                            const effectiveDotSize = Math.min(effectiveCellW, effectiveCellH) - effectiveGap;
+                                ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
 
-                            ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-
-                            if (shape === "circle") {
-                                ctx.beginPath();
-                                ctx.arc(
-                                    px + effectiveCellW / 2,
-                                    py + effectiveCellH / 2,
-                                    effectiveDotSize / 2,
-                                    0,
-                                    Math.PI * 2
-                                );
-                                ctx.fill();
-                            } else {
-                                ctx.fillRect(px, py, effectiveDotSize, effectiveDotSize);
+                                if (shape === "circle") {
+                                    ctx.beginPath();
+                                    ctx.arc(
+                                        px + effectiveCellW / 2,
+                                        py + effectiveCellH / 2,
+                                        effectiveDotSize / 2,
+                                        0,
+                                        Math.PI * 2
+                                    );
+                                    ctx.fill();
+                                } else {
+                                    ctx.fillRect(px, py, effectiveDotSize, effectiveDotSize);
+                                }
                             }
                         }
+                    } catch (e) {
+                        // Ignore les erreurs de lecture canvas ponctuelles
                     }
                 }
             }
@@ -136,18 +149,27 @@ const LedVideo = ({
 
         setup();
 
-        const startPlayback = () => {
-            video.play().catch(() => { });
-            draw();
+        video.load();
+
+        const tryPlay = () => {
+            video.play().catch((err) => {
+                console.error("LedVideo play() failed:", err.name, err.message);
+            });
         };
 
-        if (video.readyState >= 3) {
-            startPlayback();
-        } else {
-            video.addEventListener("canplaythrough", startPlayback, { once: true });
-        }
-        video.play().catch(() => { });
+        video.addEventListener("loadeddata", tryPlay, { once: true });
+        video.addEventListener("error", () => {
+            console.error("LedVideo video error:", video.error);
+        });
+
+        tryPlay();
         draw();
+
+        const retryOnInteraction = () => {
+            video.play().catch(() => { });
+        };
+        document.addEventListener("touchstart", retryOnInteraction, { once: true });
+
         const resizeObserver = new ResizeObserver(() => setup());
         if (canvas.parentElement) {
             resizeObserver.observe(canvas.parentElement);
@@ -156,7 +178,8 @@ const LedVideo = ({
         return () => {
             cancelAnimationFrame(animationId);
             resizeObserver.disconnect();
-            video.removeEventListener("canplaythrough", startPlayback);
+            video.removeEventListener("loadeddata", tryPlay);
+            document.removeEventListener("touchstart", retryOnInteraction);
         };
     }, [cellSize, gap, shape, repeat, minCellSize]);
 
@@ -173,7 +196,7 @@ const LedVideo = ({
                 playsInline
                 autoPlay
                 preload="auto"
-                className="hidden"
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0, pointerEvents: "none" }}
             />
             <canvas ref={sampleCanvasRef} className="hidden" />
             <canvas ref={canvasRef} className="w-full h-full" />

@@ -12,7 +12,7 @@ type GraphicProjectItem = {
     des: string;
     img: string;
     iconLists: string[];
-    link: string;
+    link?: string;
     video?: string;
 };
 
@@ -20,7 +20,7 @@ const GraphicProjects = () => {
     const projects = graphicProjects as GraphicProjectItem[];
 
     return (
-        <div className="py-20 mt-5 " id="graphic-projects">
+        <div className=" flex flex-col items-center p-4 relativepy-20 mt-5 " id="graphic-projects">
             <h1 className="heading">
                 Mes{" "}
                 <span className="text-purple">projets graphiques</span>
@@ -33,7 +33,7 @@ const GraphicProjects = () => {
                     >
                         <PinContainer
                             title={item.title}
-                            href={item.link}
+                        // href={item.link}
                         >
                             <div className="flex flex-col h-[28rem] w-full">
                                 {/* Bloc image, hauteur fixe, angles propres */}
@@ -57,6 +57,7 @@ const GraphicProjects = () => {
                                             loop
                                             playsInline
                                             className="z-10 absolute inset-0 w-full h-full object-cover p-4 rounded-3xl"
+                                            style={{ transform: "translateZ(0)", WebkitTransform: "translateZ(0)" }}
                                         />
                                     ) : (
                                         <img
@@ -95,20 +96,21 @@ const GraphicProjects = () => {
                                         ))}
                                     </div>
 
-                                    <div className="flex justify-center items-center">
+
+                                    {/* <div className="flex justify-center items-center">
                                         <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                                             Site / GitHub
                                         </p>
                                         <FaLocationArrow className="ms-3" color="#CBACF9" />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </PinContainer>
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center mt-4 pb-10">
-                <a className="pt-10 " href="https://cargocollective.com/Arteinsana" target="_blank" rel="noopener noreferrer">
+            <div className="flex justify-center mt-4 pb-40 ">
+                <a className="pt-10  " href="https://cargocollective.com/Arteinsana" target="_blank" rel="noopener noreferrer">
                     <MagicButton
                         title=" + Plus de projets"
                         icon={<FaLocationArrow />}
